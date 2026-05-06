@@ -1,11 +1,24 @@
-export default function Header({ totalCount }) {
+import { useEffect, useState } from "react";
+
+export default function Header({ totalCount, jokes = [] }) {
+  const [randomJoke, setRandomJoke] = useState(null);
+
+  useEffect(() => {
+    if (jokes.length > 0) {
+      const randomIndex = Math.floor(Math.random() * jokes.length);
+      setRandomJoke(jokes[randomIndex]);
+    }
+  }, [jokes]);
+
   return (
     <header className="header">
       <div>
         <p className="eyebrow">Random Jokes Viewer</p>
-        <h1>Browse jokes in a clean, playful interface</h1>
+        <h1> Toaday's Jokes</h1>
         <p className="subtitle">
-          Fetch fresh jokes, reveal punchlines, and keep the fun going.
+          {randomJoke
+            ? `"${randomJoke.text}"`
+            : "Fetch fresh jokes, reveal punchlines, and keep the fun going."}
         </p>
       </div>
 

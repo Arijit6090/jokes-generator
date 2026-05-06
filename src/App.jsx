@@ -69,11 +69,11 @@ export default function App() {
   return (
     <main className="app">
       <div className="container">
-        <Header totalCount={jokeCount} />
+        <Header totalCount={jokeCount} jokes={jokes} />
 
         <Controls
           loading={loading}
-          onRefresh={() => loadJokes({ append: false })}
+          onRefresh={() => loadJokes({ append: true })}
           onLoadMore={() => loadJokes({ append: true })}
         />
 

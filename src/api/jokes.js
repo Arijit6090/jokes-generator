@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const API_URL = "https://api.freeapi.app/api/v1/public/randomjokes";
+const API_URL = `https://api.freeapi.app/api/v1/public/randomjokes?page={pageNum}&limit=12`;
 
-export const fetchRandomJokes = async () => {
-  const response = await axios.get(API_URL);
+export const fetchRandomJokes = async (pageNum = 1) => {
+  const response = await axios.get(API_URL.replace("{pageNum}", pageNum));
   return response.data;
 };
 

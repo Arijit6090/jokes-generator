@@ -50,9 +50,27 @@ h1 {
 }
 
 .subtitle {
-  margin: 12px 0 0;
-  color: #cbd5e1;
+  background: linear-gradient(135deg, #173345, #03293f);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-top: 14px;
+  color: #e2e8f0;
   max-width: 560px;
+  
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 500;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+
+  transition: all 0.3s ease;
+}
+
+/* subtle hover effect */
+.subtitle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
 .stats {
